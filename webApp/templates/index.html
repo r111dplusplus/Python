@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub Copilot</title>
+</head>
+<!-- CSS読み込み -->
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+<!-- jquery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<!-- JS読み込み -->
+<script src="{% static 'js/script.js' %}"></script>
+<body>
+    <!-- ロゴ画像、グローバルメニュー -->
+    <header>
+        <div class="header-logo">
+            <img src="{% static 'images/logo.png'%} "  alt="ロゴ画像">
+        </div>
+        <nav class="header-nav">
+            <ul>
+                <li><a href="#">ホーム</a></li>
+                <li><a href="#">サービス</a></li>
+                <li><a href="#">会社概要</a></li>
+                <li><a href="#">採用情報</a></li>
+                <li><a href="#">お問い合わせ</a></li>
+            </ul>
+        </nav>
+        <!-- ハンバーガーメニュー -->
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </header>  
+    <!-- ヒーローイメージ（画像） -->
+    <div class="hero">
+        <!-- 画像のスライドショー -->
+        <img src="{% static 'images/hero1.avif' %}" alt="ヒーローイメージ1">
+        <img src="{% static 'images/hero2.webp' %}" alt="ヒーローイメージ2">
+        <img src="{% static 'images/hero3.jpg' %}" alt="ヒーローイメージ3">
+    </div
+    <!-- 左にメインコンテンツ、右にサイドバー-->
+    <div class="container">
+        <main class="main">
+            <section class="section">
+                <h2>サービス</h2>
+                <p>サービスの説明</p>
+            </section>
+            <section class="section">
+                <h2>会社概要</h2>
+                <p>会社概要の説明</p>
+            </section>
+            <section class="section">
+                <h2>採用情報</h2>
+                <p>採用情報の説明</p>
+            </section>
+            <section class="section">
+                <h2>お問い合わせ</h2>
+                <!-- お問い合わせフォーム -->
+                <div class="contact-form">
+                    <form method="post" action="{% url '' %}">
+                        {% csrf_token %}
+                        <!-- フォームのフィールド -->
+                        <input type="text" name="name" placeholder="Your name"><br>
+                        <input type="email" name="email" placeholder="Your email"><br>
+                        <!-- お問い合わせ内容 -->
+                        <textarea name="message" placeholder="Your message"></textarea><br>
+                        <input type="submit" value="Submit">
+                    </form>
+                </div>
+            </section>
+        </main>
+        <aside class="sidebar">
+            <section class="section">
+                <h2>サイドバー</h2>
+                <p>サイドバーの説明</p>
+            </section>
+        </aside>
+        </div>
+        <!-- フッター -->
+        <footer>
+            <div class="footer-logo">
+                <img src="{% static 'images/logo.png' %}" alt="ロゴ画像">
+            </div>
+            <nav class="footer-nav">
+                <ul>
+                    <li><a href="#">ホーム</a></li>
+                    <li><a href="#">サービス</a></li>
+                    <li><a href="#">会社概要</a></li>
+                    <li><a href="#">採用情報</a></li>
+                    <li><a href="#">お問い合わせ</a></li>
+                </ul>
+            </nav>
+        </footer>
+</body>
+</html>

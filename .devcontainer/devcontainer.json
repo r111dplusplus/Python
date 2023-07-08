@@ -1,0 +1,7 @@
+{
+   "name": "non-django",
+   "dockerFile": "Dockerfile",
+   "extensions": [
+   	"ms-python.python"
+   ],
+}
